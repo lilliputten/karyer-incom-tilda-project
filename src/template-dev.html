@@ -1,0 +1,27 @@
+<!--
+@desc Dev code
+@changed 2025.02.04, 13:09
+-->
+
+<script type="text/javascript">
+  // DEBUG: Show a dev mode warning (if the script hasn't been loaded)
+  function devScriptError(arg) {
+    requestAnimationFrame(function delayed() {
+      const body = document.body;
+      const divNode = document.createElement('div');
+      divNode.classList.add('devScriptError');
+      divNode.style.backgroundColor = 'red';
+      divNode.style.color = 'white';
+      divNode.style.position = 'fixed';
+      divNode.style.zIndex = '99999999';
+      divNode.style.top = '0';
+      divNode.style.width = '100%';
+      divNode.style.padding = '5px 10px';
+      divNode.style.fontFamily = 'sans-serif';
+      divNode.style.textAlign = 'center';
+      divNode.innerText =
+        'Scripts has not been loaded. The page is probably being maintained in development mode.';
+      body.prepend(divNode);
+    });
+  }
+</script>

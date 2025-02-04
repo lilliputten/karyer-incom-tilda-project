@@ -1,0 +1,38 @@
+$primaryColor: #d10;
+
+// $darkTextColor: #411;
+// $moodGrayColor: #344;
+
+// $navbarHeight: 120px;
+// $topMenuHeight: 50px;
+//
+// $socialIconSize: 32px;
+
+// Delays
+
+$transitionTimeMs: 250ms;
+$animationTimeMs: 500ms;
+$disappearTimeMs: 1000ms;
+
+// // NavHeader
+//
+// $NavHeaderBorderColor: #000;
+// $NavHeaderVMargin: 50px;
+// $NavHeaderHeight: 60px;
+// $NavHeaderTotalHeight: calc($NavHeaderVMargin * 2 + $NavHeaderHeight);
+
+// Fonts
+
+$defaultFont: 'Inter', Arial, sans-serif;
+$titleFont: 'Russo One', Arial, sans-serif;
+$defaultFontSize: 16px;
+
+// Adaptive layouts...
+
+$smallTreshold: 660px;
+$mobileTreshold: 980px;
+$wideTreshold: 1200px;
+
+// Blocks
+
+$blockNavHeader: '.t228';
