@@ -11,6 +11,8 @@ import './misc-styles';
 import { isDev } from './core/constants/isDev';
 import { isDebug } from './core/constants/isDebug';
 
+import { initNavHeader } from './NavHeader';
+
 /** Print app info */
 function printAppInfo() {
   const appVersion = process.env.APP_VERSION;
@@ -24,6 +26,7 @@ function printAppInfo() {
 /** Init all the page */
 function initPage() {
   // Start subcomponents...
+  initNavHeader();
 }
 
 printAppInfo();

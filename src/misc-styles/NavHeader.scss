@@ -1,0 +1,208 @@
+@use 'sass:math';
+
+@use '../variables' as *;
+
+#allrecords .uc-NavHeader {
+  $BLOCK: $blockNavHeader;
+  // $mobileTreshold: 980px;
+  $logoWidth: 205px;
+  $logoHeight: 55px;
+
+  $smallLogoScale: 1.5;
+  $smallLogoWidth: calc($logoWidth / $smallLogoScale);
+  $smallLogoHeight: calc($logoHeight / $smallLogoScale);
+
+  // Links...
+  @include activeLink;
+
+  .t821__leftwrapper {
+    padding-left: 0 !important;
+  }
+
+  // Social links
+  .t-sociallinks__wrapper {
+    list-style: none;
+    // padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 10px;
+    li {
+      display: inline-block;
+      a {
+        display: inline-block;
+        svg {
+          path {
+            fill: $primaryColor;
+          }
+        }
+      }
+    }
+  }
+
+  // Colors...
+  > #{$BLOCK} {
+    background-color: #fff;
+    @media (width <= $mobileTreshold) {
+      box-shadow: 0 10px 15px 0 rgba(0 0 0 / 50%);
+      // Make panel full-height
+      overflow: auto;
+      bottom: 0;
+    }
+  }
+
+  #{$BLOCK}__phone-container,
+  #{$BLOCK}__adress-container {
+    // Adjust vertical centering
+    padding-top: 3px;
+    a:hover {
+      color: $primaryColor;
+    }
+  }
+
+  #{$BLOCK}__logo-descr {
+    // Hide default text
+    color: #fff;
+  }
+
+  // Mobile menu mode...
+  @media (width <= $mobileTreshold) {
+    // Adjust logo in the mobile header
+    .tmenu-mobile__text #{$BLOCK}__logo-wrapper {
+      margin: 0;
+      img {
+        max-width: 150px !important;
+      }
+    }
+    #{$BLOCK}__logo-descr {
+      margin-top: 10px;
+      display: flex;
+      justify-content: center;
+    }
+    // @see Menu cloned in `project/src/TopMenu.ts`
+    #{$BLOCK}__maincontainer {
+      #{$BLOCK}__logo-wrapper {
+        // SHow a logo only in the top bar
+        display: none;
+      }
+      > div {
+        // Make children symmetrical
+        padding: 0 20px !important;
+        > div {
+          padding: 10px 10px !important;
+          // display: block;
+          // margin: 10px auto;
+          // text-align: center;
+        }
+      }
+      padding: 0;
+    }
+
+    .SubMenu {
+      &.t-menu__list {
+        padding: 0 10px;
+        // line-height: 2em;
+      }
+      .t-menusub__content {
+        padding-top: 8px;
+        // overflow: hidden;
+      }
+      li#{$blockTopMenu}__list_item {
+        display: block;
+        padding: 0 20px !important;
+        font-size: 95%;
+        a {
+          display: inline-block;
+          padding: 0.75em 0;
+          &:hover {
+            color: $primaryColor;
+          }
+        }
+      }
+      .t-menusub__list-item {
+        margin-bottom: 0;
+      }
+      .t-menusub__menu.t-menusub__menu_show {
+        display: block;
+      }
+      .t-menusub__arrow {
+        // Arrow should be visible
+        // display: none;
+      }
+      a {
+        // color: $themeMoodColor;
+      }
+    }
+    /*
+    #{$BLOCK}__maincontainer {
+      padding-top: 5px;
+      padding-bottom: 20px;
+    }
+    */
+  }
+
+  // Medium and big screens adjustments...
+  @media (width > $mobileTreshold) {
+    #{$BLOCK}__logo-wrapper {
+      display: none;
+    }
+    #{$BLOCK}__logo-descr {
+      display: block;
+    }
+    .SubMenu {
+      // Hide submenu for wide screens: TopMenu will apear then
+      display: none;
+    }
+    & {
+      // height: calc($navbarHeight + $topMenuHeight);
+      height: $navbarHeight;
+    }
+    > #{$BLOCK} {
+      // height: calc($navbarHeight + $topMenuHeight);
+      height: $navbarHeight;
+    }
+    #{$BLOCK}__maincontainer {
+      height: $navbarHeight;
+    }
+    // #{$BLOCK}__maincontainer,
+    // #{$BLOCK}__leftwrapper,
+    // #{$BLOCK}__rightwrapper {
+    //   display: flex;
+    //   align-items: center;
+    //   justify-content: space-around;
+    //   gap: 2em;
+    // }
+    // #{$BLOCK}__logo-wrapper {
+    //   flex: 1.5;
+    // }
+    // @media (width <= 1200px) {
+    //   // Hide logo description on medium screens
+    //   #{$BLOCK}__logo-descr {
+    //     display: none;
+    //   }
+    // }
+  }
+
+  // Mobile menu...
+  // .tmenu-mobile__burgerlogo {
+  //   a {
+  //     img {
+  //       width: $smallLogoWidth !important;
+  //       max-width: $smallLogoWidth !important;
+  //       height: $smallLogoHeight;
+  //     }
+  //   }
+  // }
+
+  // a.t-menu__link-item {
+  //   // Active menu item
+  //   &.t-active {
+  //     color: $themeRedColor !important;
+  //     opacity: 1;
+  //     text-decoration: underline;
+  //     &::after {
+  //       display: none;
+  //       border-color: #fff;
+  //     }
+  //   }
+  // }
+}

@@ -1,0 +1,48 @@
+@use '../variables' as *;
+
+#allrecords .uc-TopMenu {
+  $BLOCK: $blockTopMenu;
+  $mobileTreshold: 980px;
+
+  position: fixed;
+  width: 100%;
+  z-index: 995;
+  > #{$BLOCK} {
+    position: relative;
+  }
+  @include activeLink;
+
+  .t-menu__list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 0.2em 2em;
+    @media (width <= 1120px) {
+      column-gap: 0.75em;
+      li {
+        font-size: 85%;
+      }
+    }
+    li {
+      padding: 0 !important;
+    }
+  }
+
+  // Hide for small screens: NavHeader SubMenu will be visible
+  @media (width <= $mobileTreshold) {
+    display: none;
+  }
+
+  // Medium and big screens adjustments...
+  @media (width > $mobileTreshold) {
+    & {
+      height: $topMenuHeight;
+    }
+    > #{$BLOCK} {
+      height: $topMenuHeight;
+    }
+    #{$BLOCK}__maincontainer {
+      height: $topMenuHeight;
+    }
+  }
+}

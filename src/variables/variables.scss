@@ -1,12 +1,13 @@
 $primaryColor: #d10;
+$themeRedColor: $primaryColor;
+
+$grayMd2Color: #33383c;
 
 // $darkTextColor: #411;
 // $moodGrayColor: #344;
 
-// $navbarHeight: 120px;
-// $topMenuHeight: 50px;
-//
-// $socialIconSize: 32px;
+$socialIconSize: 32px;
+$socialIconSmallSize: 22px;
 
 // Delays
 
@@ -14,8 +15,11 @@ $transitionTimeMs: 250ms;
 $animationTimeMs: 500ms;
 $disappearTimeMs: 1000ms;
 
-// // NavHeader
-//
+// NavHeader
+
+$navbarHeight: 72px;
+$topMenuHeight: 120px;
+
 // $NavHeaderBorderColor: #000;
 // $NavHeaderVMargin: 50px;
 // $NavHeaderHeight: 60px;
@@ -23,9 +27,9 @@ $disappearTimeMs: 1000ms;
 
 // Fonts
 
-$defaultFont: 'Inter', Arial, sans-serif;
-$titleFont: 'Russo One', Arial, sans-serif;
-$defaultFontSize: 16px;
+$defaultFont: 'Roboto', Arial, sans-serif;
+$titleFont: 'Circe', Arial, sans-serif;
+$defaultFontSize: 20px;
 
 // Adaptive layouts...
 
@@ -35,4 +39,5 @@ $wideTreshold: 1200px;
 
 // Blocks
 
-$blockNavHeader: '.t228';
+$blockNavHeader: '.t821';
+$blockTopMenu: '.t456';

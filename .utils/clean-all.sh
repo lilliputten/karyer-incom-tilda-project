@@ -37,7 +37,7 @@ echo "Clearing root folder..." \
   -not \( -name 'node_modules' -prune \) \
   \( \
     -name '*_' \
-    -name '*~' \
+    -o -name '*~' \
     -o -name '*.py[co]' \
     -o -name '.*sw[op]' \
     -o -name '*.bak' \

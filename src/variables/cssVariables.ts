@@ -2,23 +2,12 @@
 
 import * as cssVariables from './variables-export.scss';
 
-// See pre-exports in `variables-export.scss`
-export interface TVariables {
-  blockNavHeader: string;
-
-  smallTreshold: string;
-  smallTresholdPx: number;
-  mobileTreshold: string;
-  mobileTresholdPx: number;
-  wideTreshold: string;
-  wideTresholdPx: number;
-}
-
-const vars = cssVariables as TVariables;
+const vars = cssVariables as TCssVariables;
 
 const {
   // prettier-ignore
   blockNavHeader,
+  blockTopMenu,
 
   smallTreshold,
   mobileTreshold,
@@ -29,9 +18,23 @@ const smallTresholdPx = parseInt(smallTreshold);
 const mobileTresholdPx = parseInt(mobileTreshold);
 const wideTresholdPx = parseInt(wideTreshold);
 
+// See pre-exports in `variables-export.scss`
+export interface TCssVariables {
+  blockNavHeader: string;
+  blockTopMenu: string;
+
+  smallTreshold: string;
+  smallTresholdPx: number;
+  mobileTreshold: string;
+  mobileTresholdPx: number;
+  wideTreshold: string;
+  wideTresholdPx: number;
+}
+
 export {
   // Block ids...
   blockNavHeader,
+  blockTopMenu,
 
   // Tresholds as is...
   smallTreshold,

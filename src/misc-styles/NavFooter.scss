@@ -1,0 +1,26 @@
+@use 'sass:math';
+
+@use '../variables' as *;
+
+#allrecords .uc-NavFooter {
+  @include activeLink;
+  .t977__col_left {
+    a {
+      // color: $primaryColor;
+      color: #fff;
+    }
+    em {
+      display: block;
+      opacity: 0.5;
+      font-style: normal;
+      font-size: 85%;
+    }
+    ul {
+      list-style: none;
+      padding-left: 0;
+    }
+    li {
+      margin: 1em 0;
+    }
+  }
+}

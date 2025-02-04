@@ -1,8 +1,63 @@
+@use 'sass:math';
+
 @use '../variables' as *;
 
 #allrecords .uc-Hero {
   @include activeLink;
+  // padding-top: $topMenuHeight;
   .t-cover {
-    background-color: #ddd;
+    // background-color: #ddd;
+  }
+  .t-title,
+  .t-descr {
+    u {
+      display: block;
+      font-size: 65%;
+      line-height: 65%;
+      text-decoration: none;
+    }
+    strong {
+      font-size: 150%;
+      opacity: 0.7;
+    }
+  }
+  .t-descr {
+    br {
+      display: none;
+    }
+  }
+  .t-title {
+    strong {
+      display: block;
+    }
+    &:after {
+      display: block;
+      height: 4px;
+      background-color: $primaryColor;
+      content: '';
+      width: 100px;
+      margin: 0 auto;
+      margin-top: 10px;
+    }
+  }
+  .t734__button {
+    padding-top: 20px;
+  }
+  @media (width > $mobileTreshold) {
+    $topPadding: $topMenuHeight;
+    $innerPadding: $topPadding - 30px; // calc($topMenuHeight / 2) + 40px;
+    .t-cover__carrier {
+      padding-top: $topPadding;
+    }
+    .t734__textwrapper {
+      padding-top: $innerPadding;
+    }
   }
 }
+
+// .t-sociallinks__svg {
+//   border: 1px solid red;
+//   path {
+//     fill: red;
+//   }
+// }
