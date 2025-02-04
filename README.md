@@ -5,5 +5,5 @@
 
 # karyer-incom-tilda-project
 
-- Version: 0.0.0
-- Last changes timestamp: 2025.02.04 12:54:28 +0300
+- Version: 0.0.1
+- Last changes timestamp: 2025.02.05 00:43:50 +0300
