@@ -8,6 +8,8 @@
   @include BlockWithTitle;
 
   .t-card__container {
+    border: 20px solid transparent;
+    box-sizing: border-box;
     display: grid;
     grid-auto-columns: 1fr;
     grid-auto-rows: 265px;
@@ -39,9 +41,7 @@
     background-size: cover;
     transition: all $transitionTimeMs;
     overflow: hidden;
-    @media (width > $smallTreshold) {
-      border-radius: 10px;
-    }
+    border-radius: 10px;
     &:hover {
       opacity: 0.85;
     }

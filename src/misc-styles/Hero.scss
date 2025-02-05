@@ -1,19 +1,16 @@
-@use 'sass:math';
+// @use 'sass:math';
 
 @use '../variables' as *;
 
 #allrecords .uc-Hero {
   @include activeLink;
-  // padding-top: $topMenuHeight;
-  .t-cover {
-    // background-color: #ddd;
-  }
   .t-title,
   .t-descr {
     u {
       display: block;
       font-size: 65%;
-      line-height: 65%;
+      line-height: 1.2;
+      // line-height: 65%;
       text-decoration: none;
     }
     strong {

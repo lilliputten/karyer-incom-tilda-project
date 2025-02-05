@@ -1,0 +1,22 @@
+@use '../variables' as *;
+
+#allrecords .uc-OrderForm {
+  @include BlockWithTitle;
+  @include activeLink;
+
+  .t716__mainwrapper {
+    @media (width > $mobileTreshold) {
+      border: 0 solid transparent;
+      border-left-width: 20px;
+      border-right-width: 10px;
+      box-sizing: content-box;
+    }
+  }
+
+  // Social links
+  @include SocialLinksWrapper();
+  .t-sociallinks__wrapper {
+    margin-top: 30px;
+    justify-content: center;
+  }
+}

@@ -13,6 +13,7 @@ import { isDebug } from './core/constants/isDebug';
 
 import { initNavHeader } from './NavHeader';
 import { initProduction } from './Production';
+import { initSocials } from './Socials';
 
 /** Print app info */
 function printAppInfo() {
@@ -29,6 +30,7 @@ function initPage() {
   // Start subcomponents...
   initNavHeader();
   initProduction();
+  initSocials();
 }
 
 printAppInfo();

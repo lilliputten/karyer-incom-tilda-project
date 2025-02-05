@@ -1,4 +1,4 @@
-import { blockTopMenu, blockNavHeader } from './variables';
+import { blockNavHeader } from './variables';
 
 const visibleMenuClass = 't-menusub__menu_show';
 
@@ -72,16 +72,6 @@ function cloneSubMenu() {
   }
 }
 
-function cloneSoclials() {
-  const socialsSelector = `.uc-NavFooter .t-sociallinks__wrapper`;
-  const targetSelector = `.uc-NavHeader ${blockNavHeader}__logo-descr`;
-  const socialsNode = document.querySelector(socialsSelector);
-  const targetNode = document.querySelector(targetSelector);
-  const socialsCloned = socialsNode.cloneNode(true) as Element; // NOTE: Clone to have nodes without events etc
-  targetNode.innerHTML = '';
-  targetNode.append(socialsCloned);
-}
-
 function cloneLogo() {
   const logoSelector = `.uc-NavHeader .t821__logo-wrapper`;
   const targetSelector = `.uc-NavHeader .tmenu-mobile__text`;
@@ -94,6 +84,5 @@ function cloneLogo() {
 
 export function initNavHeader() {
   cloneSubMenu();
-  cloneSoclials();
   cloneLogo();
 }

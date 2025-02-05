@@ -143,10 +143,11 @@ module.exports = {
           isDebug,
           useLocalServedScripts,
         });
+        const content = readContent(path.resolve(__dirname, templateFile)).trim();
         return [
           // Combine template...
           '<!-- ' + appVersionHash + ' -->' + NL,
-          readContent(path.resolve(__dirname, templateFile)) + NL,
+          content ? content + NL : '',
           isDev && readContent(path.resolve(__dirname, templateDevFile)) + NL,
           scriptsContent + NL,
         ]

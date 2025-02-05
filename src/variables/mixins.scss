@@ -55,5 +55,31 @@
 @mixin BlockWithTitle {
   .t-title {
     @include SectionTitle;
+    font-size: 40px;
+  }
+  // NOTE: It affects the bottom comment in form blocks.
+  // .t-descr {
+  //   font-size: 22px;
+  // }
+}
+
+@mixin SocialLinksWrapper($color: var(--primaryColor)) {
+  .t-sociallinks__wrapper {
+    list-style: none;
+    // padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 10px;
+    li {
+      display: inline-block;
+      a {
+        display: inline-block;
+        svg {
+          path {
+            fill: $color;
+          }
+        }
+      }
+    }
   }
 }
