@@ -1,5 +1,6 @@
 {
   "search.exclude": {
+    "src/assets": true,
     "compiled-assets": true,
     "static": true,
     "build": true,

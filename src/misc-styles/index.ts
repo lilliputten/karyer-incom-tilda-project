@@ -10,3 +10,4 @@ import './NavFooter.scss';
 
 import './Production.scss';
 import './OrderForm.scss';
+import './Advantages.scss';

@@ -4,13 +4,6 @@
 
 #allrecords .uc-NavHeader {
   $BLOCK: $blockNavHeader;
-  // $mobileTreshold: 980px;
-  $logoWidth: 205px;
-  $logoHeight: 55px;
-
-  $smallLogoScale: 1.5;
-  $smallLogoWidth: calc($logoWidth / $smallLogoScale);
-  $smallLogoHeight: calc($logoHeight / $smallLogoScale);
 
   // Links...
   @include activeLink;
@@ -72,9 +65,6 @@
         padding: 0 20px !important;
         > div {
           padding: 10px 10px !important;
-          // display: block;
-          // margin: 10px auto;
-          // text-align: center;
         }
       }
       padding: 0;
@@ -107,20 +97,7 @@
       .t-menusub__menu.t-menusub__menu_show {
         display: block;
       }
-      .t-menusub__arrow {
-        // Arrow should be visible
-        // display: none;
-      }
-      a {
-        // color: $themeMoodColor;
-      }
     }
-    /*
-    #{$BLOCK}__maincontainer {
-      padding-top: 5px;
-      padding-bottom: 20px;
-    }
-    */
   }
 
   // Medium and big screens adjustments...
@@ -136,56 +113,13 @@
       display: none;
     }
     & {
-      // height: calc($navbarHeight + $topMenuHeight);
       height: $navbarHeight;
     }
     > #{$BLOCK} {
-      // height: calc($navbarHeight + $topMenuHeight);
       height: $navbarHeight;
     }
     #{$BLOCK}__maincontainer {
       height: $navbarHeight;
     }
-    // #{$BLOCK}__maincontainer,
-    // #{$BLOCK}__leftwrapper,
-    // #{$BLOCK}__rightwrapper {
-    //   display: flex;
-    //   align-items: center;
-    //   justify-content: space-around;
-    //   gap: 2em;
-    // }
-    // #{$BLOCK}__logo-wrapper {
-    //   flex: 1.5;
-    // }
-    // @media (width <= 1200px) {
-    //   // Hide logo description on medium screens
-    //   #{$BLOCK}__logo-descr {
-    //     display: none;
-    //   }
-    // }
   }
-
-  // Mobile menu...
-  // .tmenu-mobile__burgerlogo {
-  //   a {
-  //     img {
-  //       width: $smallLogoWidth !important;
-  //       max-width: $smallLogoWidth !important;
-  //       height: $smallLogoHeight;
-  //     }
-  //   }
-  // }
-
-  // a.t-menu__link-item {
-  //   // Active menu item
-  //   &.t-active {
-  //     color: $themeRedColor !important;
-  //     opacity: 1;
-  //     text-decoration: underline;
-  //     &::after {
-  //       display: none;
-  //       border-color: #fff;
-  //     }
-  //   }
-  // }
 }

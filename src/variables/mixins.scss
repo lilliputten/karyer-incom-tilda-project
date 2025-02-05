@@ -40,22 +40,22 @@
   }
 }
 
-@mixin SectionTitle {
-  &:after {
-    display: block;
-    height: 4px;
-    background-color: var(--primaryColor);
-    content: '';
-    width: 200px;
-    margin: 0 auto;
-    margin-top: 10px;
-  }
+@mixin SectionTitleDelim($size: 4px, $width: 200px, $marginTop: 10px) {
+  display: block;
+  height: $size;
+  background-color: var(--primaryColor);
+  content: '';
+  width: $width;
+  margin: 0 auto;
+  margin-top: $marginTop;
 }
 
 @mixin BlockWithTitle {
   .t-title {
-    @include SectionTitle;
     font-size: 40px;
+    &:after {
+      @include SectionTitleDelim($size: 4px, $width: 200px);
+    }
   }
   // NOTE: It affects the bottom comment in form blocks.
   // .t-descr {

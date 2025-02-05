@@ -1,0 +1,31 @@
+@use '../variables' as *;
+
+#allrecords .uc-Advantages {
+  @include BlockWithTitle;
+  @include activeLink;
+
+  .t1031__wrapper {
+    padding: 0;
+  }
+  &,
+  .t-cover__filter {
+    background-color: #fff !important;
+  }
+  .t-title {
+    color: $titleColor;
+    text-transform: uppercase;
+  }
+  .t1031__img {
+    display: block;
+    background-color: $primaryColor;
+    padding: 5px;
+    border-radius: 10px;
+    margin: 10px auto;
+    margin-bottom: 40px;
+  }
+  .t-list__item .t-name {
+    &:after {
+      @include SectionTitleDelim($size: 2px, $width: 100%);
+    }
+  }
+}

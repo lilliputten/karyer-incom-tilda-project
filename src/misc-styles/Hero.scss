@@ -10,7 +10,6 @@
       display: block;
       font-size: 65%;
       line-height: 1.2;
-      // line-height: 65%;
       text-decoration: none;
     }
     strong {
@@ -45,7 +44,7 @@
   }
   @media (width > $mobileTreshold) {
     $topPadding: $topMenuHeight;
-    $innerPadding: $topPadding - 30px; // calc($topMenuHeight / 2) + 40px;
+    $innerPadding: $topPadding - 30px;
     .t-cover__carrier {
       padding-top: $topPadding;
     }
