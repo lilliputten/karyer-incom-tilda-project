@@ -1,0 +1,48 @@
+@use '../variables' as *;
+
+#allrecords .uc-FeedbackTitle {
+  @include BlockWithTitle;
+}
+#allrecords .uc-Feedback {
+  $BLOCK: '.t734';
+
+  @include activeLink;
+
+  #{$BLOCK}__wrapper {
+    width: auto;
+  }
+  #{$BLOCK}__textwrapper {
+    text-align: left;
+    padding-bottom: 1em;
+    border: 0 solid transparent;
+    border-left-width: 20px;
+    border-right-width: 20px;
+    box-sizing: border-box;
+  }
+  @media (width > $mobileTreshold) {
+    #{$BLOCK}__textwrapper {
+      padding-left: 150px;
+      padding-right: 120px;
+      position: relative;
+      &:before,
+      &:after {
+        position: absolute;
+        content: '';
+        width: 93px;
+        height: 77px;
+        background-image: url('../assets/Feedback/quote.svg');
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+      &:before {
+        left: 0;
+        top: 0;
+      }
+      &:after {
+        right: 0;
+        bottom: 0;
+        transform: rotate(180deg);
+      }
+    }
+  }
+}
