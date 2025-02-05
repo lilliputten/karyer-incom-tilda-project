@@ -7,3 +7,5 @@ import './Hero.scss';
 import './NavHeader.scss';
 import './TopMenu.scss';
 import './NavFooter.scss';
+
+import './Production.scss';

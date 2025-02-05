@@ -12,6 +12,7 @@ import { isDev } from './core/constants/isDev';
 import { isDebug } from './core/constants/isDebug';
 
 import { initNavHeader } from './NavHeader';
+import { initProduction } from './Production';
 
 /** Print app info */
 function printAppInfo() {
@@ -27,6 +28,7 @@ function printAppInfo() {
 function initPage() {
   // Start subcomponents...
   initNavHeader();
+  initProduction();
 }
 
 printAppInfo();

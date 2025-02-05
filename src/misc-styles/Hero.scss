@@ -43,21 +43,18 @@
   .t734__button {
     padding-top: 20px;
   }
+  .t-slds__arrow_container > li {
+    padding-top: 40px;
+  }
   @media (width > $mobileTreshold) {
     $topPadding: $topMenuHeight;
     $innerPadding: $topPadding - 30px; // calc($topMenuHeight / 2) + 40px;
     .t-cover__carrier {
       padding-top: $topPadding;
     }
+    .t-slds__arrow_container > li,
     .t734__textwrapper {
       padding-top: $innerPadding;
     }
   }
 }
-
-// .t-sociallinks__svg {
-//   border: 1px solid red;
-//   path {
-//     fill: red;
-//   }
-// }
