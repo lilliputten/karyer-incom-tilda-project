@@ -4,6 +4,17 @@
   @include BlockWithTitle;
   @include activeLink;
 
+  // @media (width <= $mobileTreshold) {
+  //   .t-cover__carrier,
+  //   > div,
+  //   & {
+  //     height: auto !important;
+  //   }
+  //   .t-cover__filter {
+  //     height: 100% !important;
+  //   }
+  // }
+
   .t716__mainwrapper {
     @media (width > $mobileTreshold) {
       border: 0 solid transparent;

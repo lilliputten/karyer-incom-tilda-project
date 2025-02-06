@@ -3,4 +3,9 @@
 #allrecords .uc-Certificates {
   @include BlockWithTitle;
   @include activeLink;
+
+  .t-section__descr,
+  .t-section__title {
+    text-align: center;
+  }
 }

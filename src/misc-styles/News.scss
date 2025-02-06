@@ -1,0 +1,52 @@
+@use '../variables' as *;
+
+#allrecords .uc-News {
+  @include BlockWithTitle;
+  // @include activeLink;
+
+  .t-feed__slider-grid__content {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .t-feed__container {
+    @media (width <= $mobileTreshold) {
+      // border: 0 solid transparent;
+      // border-left-width: 20px;
+      // border-right-width: 20px;
+      // box-sizing: border-box;
+    }
+  }
+  .t-feed__post-title {
+    &:after {
+      @include SectionTitleDelim($size: 2px, $width: 100%);
+    }
+  }
+
+  .t-feed__post {
+    a {
+      &,
+      .t-feed__textwrapper > * {
+        transition: all $transitionTimeMs;
+      }
+      &:hover {
+        opacity: 0.85;
+        .t-feed__textwrapper > * {
+          text-decoration: underline;
+          color: $primaryColor;
+        }
+      }
+    }
+  }
+}
+
+#allrecords {
+  .t-feed__post-popup__title {
+    color: #444;
+    text-transform: uppercase;
+    &:after {
+      @include SectionTitleDelim($size: 4px, $width: 200px);
+      margin-left: 0;
+    }
+  }
+}
