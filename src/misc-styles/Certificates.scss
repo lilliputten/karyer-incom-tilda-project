@@ -1,0 +1,6 @@
+@use '../variables' as *;
+
+#allrecords .uc-Certificates {
+  @include BlockWithTitle;
+  @include activeLink;
+}

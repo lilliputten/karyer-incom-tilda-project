@@ -12,3 +12,4 @@ import './Production.scss';
 import './OrderForm.scss';
 import './Advantages.scss';
 import './Feedback.scss';
+import './Certificates.scss';

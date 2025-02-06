@@ -8,7 +8,7 @@
   // Links...
   @include activeLink;
 
-  .t821__leftwrapper {
+  #{$BLOCK}__leftwrapper {
     padding-left: 0 !important;
   }
 
