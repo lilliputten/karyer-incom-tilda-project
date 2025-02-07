@@ -108,11 +108,18 @@
   @media (width <= 450px) {
     .t977__col-inner {
       width: 45%;
+      // Hide the last block ("Services")
+      &:nth-child(3) {
+        display: none;
+      }
     }
   }
   @media (width <= 300px) {
     .t977__col-inner {
-      width: 100%;
+      // width: 100%;
+      &:nth-child(3) {
+        display: none;
+      }
     }
   }
 }

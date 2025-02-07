@@ -1,8 +1,8 @@
 {
   "name": "karyer-incom-tilda-project",
-  "version": "0.0.3",
-  "timetag": "250206-2044",
-  "timestamp": "2025.02.06 20:44:29 +0300",
+  "version": "0.0.4",
+  "timetag": "250207-2019",
+  "timestamp": "2025.02.07 20:19:49 +0300",
   "changed": "2025.02.04, 12:15",
   "description": "Compiled js and css assets for include in tilda site",
   "main": "index.html",

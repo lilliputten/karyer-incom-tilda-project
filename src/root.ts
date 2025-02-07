@@ -31,6 +31,8 @@ function initPage() {
   initNavHeader();
   initProduction();
   initSocials();
+  // Forcibely update components' dimensions
+  window.dispatchEvent(new Event('resize'));
 }
 
 printAppInfo();

@@ -1,0 +1,58 @@
+@use '../variables' as *;
+
+#allrecords .uc-PageBreadcrumbs {
+  @include activeLink;
+  a {
+    color: $primaryColor;
+  }
+}
+
+#allrecords .uc-PageTitle {
+  @include activeLink;
+  @include BlockWithTitle;
+  .t-title {
+    &:after {
+      // margin-left: 0;
+    }
+  }
+}
+
+#allrecords .uc-PageSubTitle {
+  @include activeLink;
+  @include BlockWithTitle;
+  .t-title {
+    &:after {
+      // margin-left: 0;
+    }
+  }
+}
+
+#allrecords .uc-PageText {
+  @include activeLink;
+}
+
+#allrecords .uc-PageItems {
+  @include activeLink;
+  ul {
+    padding-left: 0;
+    list-style: none;
+    li {
+      margin: .5em 0;
+      padding-left: 45px;
+      background-image: url("../assets/Page/item.svg");
+      background-repeat: no-repeat;
+      background-position: 0px 2px;
+    }
+  }
+}
+
+#allrecords .uc-PageContacts {
+  @include activeLink;
+  a {
+    color: #333;
+    &:hover {
+      color: $primaryColor;
+    }
+  }
+}
+

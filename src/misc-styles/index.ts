@@ -14,3 +14,5 @@ import './Advantages.scss';
 import './Feedback.scss';
 import './Certificates.scss';
 import './News.scss';
+
+import './PageStyles.scss';

@@ -2,7 +2,6 @@
 
 #allrecords .uc-TopMenu {
   $BLOCK: $blockTopMenu;
-  $mobileTreshold: 980px;
 
   position: fixed;
   width: 100%;
@@ -11,6 +10,11 @@
     position: relative;
   }
   @include activeLink;
+
+  .t456__imglogo {
+    // Adjust logo withs
+    max-width: 160px !important;
+  }
 
   .t-menu__list {
     display: flex;
@@ -35,12 +39,8 @@
 
   // Medium and big screens adjustments...
   @media (width > $mobileTreshold) {
-    & {
-      height: $topMenuHeight;
-    }
-    > #{$BLOCK} {
-      height: $topMenuHeight;
-    }
+    &,
+    & > #{$BLOCK},
     #{$BLOCK}__maincontainer {
       height: $topMenuHeight;
     }
