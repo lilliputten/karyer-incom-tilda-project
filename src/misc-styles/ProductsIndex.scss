@@ -1,0 +1,12 @@
+@use '../variables' as *;
+
+#allrecords .uc-ProductsIndex {
+  @include activeLink;
+  a {
+    color: $primaryColor;
+  }
+  .t-img {
+    border-radius: 10px;
+  }
+}
+

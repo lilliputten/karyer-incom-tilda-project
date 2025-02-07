@@ -16,3 +16,5 @@ import './Certificates.scss';
 import './News.scss';
 
 import './PageStyles.scss';
+
+import './ProductsIndex.scss';
