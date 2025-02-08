@@ -146,6 +146,21 @@ function addProductTitleToForms() {
   });
 }
 
+function cloneTitleToTheTop(productNode: HTMLElement) {
+  const titleNode = productNode.querySelector<HTMLElement>('.t-store__prod-popup__title-wrapper');
+  console.log('XXX', {
+    productNode,
+    titleNode,
+  });
+  const wrapper = `
+  <div class="t-container MobileTitle">
+  </div>
+  `;
+  productNode.insertAdjacentHTML('afterbegin', wrapper);
+  const mobileTitleNode = productNode.querySelector<HTMLElement>('.MobileTitle');
+  mobileTitleNode.append(titleNode.cloneNode(true));
+}
+
 export function initStoreProduct() {
   const rootNode = document.querySelector<HTMLElement>('.t-rec > .t-store');
   const productNode = rootNode?.querySelector<HTMLElement>('.js-store-product.js-product');
@@ -157,5 +172,6 @@ export function initStoreProduct() {
     createDetailsFromTabs(productNode, leftColumn, rightColumn);
     appendActionsAndLabels(rightColumn);
     addProductTitleToForms();
+    cloneTitleToTheTop(productNode);
   }
 }

@@ -1,9 +1,11 @@
 @use '../variables' as *;
 
-.uc-ProductBadges,
-.uc-ProductActions {
+#allrecords {
   // Those tho are just service containers, their content should be used only in product item cards
-  display: none;
+  .uc-ProductBadges,
+  .uc-ProductActions {
+    display: none;
+  }
 }
 
 #allrecords .t-rec > .t-store {
@@ -22,7 +24,7 @@
       @include SectionTitleDelim($size: 4px, $width: 200px, $left: true);
     }
   }
-  // Product text
+  // Product description
   .js-store-prod-all-text {
     font-size: 24px;
     line-height: 1.4;
@@ -119,11 +121,13 @@
       }
     }
     .t142A__wrapone {
-      justify-content: flex-start;
+      display: block;
+      // justify-content: flex-start;
     }
     .t142A__wraptwo {
       padding: 0;
       display: flex;
+      flex-wrap: wrap;
       gap: 10px;
       > a.t-btn {
         margin: 0;
@@ -148,6 +152,59 @@
           height: 40px;
         }
       }
+    }
+  }
+  // Adjust mobile font sizes
+  .MobileTitle {
+    > div {
+      margin: 0 20px;
+    }
+    margin-bottom: 40px;
+    display: none;
+  }
+  @media (width <= $smallTreshold) {
+    // Diplay top title instead of inner one
+    .MobileTitle {
+      display: block;
+    }
+    .t-store__prod-popup__col-right .t-store__prod-popup__title-wrapper {
+      display: none;
+    }
+    .js-store-prod-name {
+      font-size: 6vw;
+    }
+    .t-store__prod-popup__info {
+      padding-top: 10px;
+    }
+    .t-store__prod-popup__sku,
+    .t-store__tabs__button .t-store__tabs__button-title,
+    .Buttons .t-btn,
+    .js-store-prod-all-text,
+    .js-store-prod-all-charcs,
+    .t-store__tabs__content {
+      font-size: 4vw;
+    }
+    .t-store__prod-popup__col-left,
+    .t-store__prod-popup__col-right {
+      .t-store__tabs__item-title {
+        font-size: 4vw;
+      }
+    }
+    .Buttons {
+      padding: 0;
+      .t142A__wraptwo {
+        flex-direction: column;
+      }
+      .t-btn {
+        flex: 1;
+        padding: 15px;
+      }
+      &.Badges .t-btn {
+        padding: 5px 15px;
+      }
+    }
+    .t-store__prod-popup__col-left .t-store__tabs__item {
+      margin: 0 20px;
     }
   }
 }
