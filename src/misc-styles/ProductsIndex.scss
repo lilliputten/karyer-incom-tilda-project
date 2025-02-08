@@ -1,12 +1,73 @@
 @use '../variables' as *;
 
+// NOTE: The styles are combined for both StoreGrid and ProductsIndex blocks!
+
+#allrecords .uc-StoreGrid,
 #allrecords .uc-ProductsIndex {
   @include activeLink;
   a {
     color: $primaryColor;
   }
+  .t-bgimg,
   .t-img {
     border-radius: 10px;
   }
+  a:hover {
+    opacity: 1;
+  }
+  @media (width <= $mobileTreshold) {
+    .t1095__imgwrapper {
+      max-width: 150px;
+    }
+  }
+  @media (width <= $smallTreshold) {
+    .t-store__card {
+      flex-direction: column;
+    }
+    .t-store__card__imgwrapper_column {
+      margin-bottom: 15px;
+    }
+    .t-item .t-cell:first-child {
+      display: block;
+      margin-left: 20px;
+      margin-bottom: 15px;
+    }
+  }
+  .t-item {
+    .t-cell .t-name,
+    .t-store__card__title {
+      &:after {
+        @include SectionTitleDelim($size: 2px, $width: 200px, $left: true);
+      }
+    }
+    &,
+    .t-name,
+    .t-descr,
+    a {
+      color: #ccc;
+    }
+    &.has-link {
+      cursor: pointer;
+      transition: all var(--transitionTimeMs);
+      $color: #333;
+      &,
+      .t-name,
+      .t-descr,
+      a {
+        text-decoration: none;
+        color: $color;
+        opacity: 1;
+      }
+      &:hover {
+        opacity: 0.75;
+        &,
+        .t-name,
+        .t-descr,
+        a {
+          color: $primaryColor;
+          text-decoration: underline;
+        }
+      }
+    }
+  }
 }
-

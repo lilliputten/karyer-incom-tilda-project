@@ -40,7 +40,7 @@
   }
 }
 
-@mixin SectionTitleDelim($size: 4px, $width: 200px, $marginTop: 10px) {
+@mixin SectionTitleDelim($size: 4px, $width: 200px, $marginTop: 10px, $left: false) {
   display: block;
   height: $size;
   background-color: var(--primaryColor);
@@ -48,6 +48,9 @@
   width: $width;
   margin: 0 auto;
   margin-top: $marginTop;
+  @if $left {
+    margin-left: 0;
+  }
 }
 
 @mixin BlockWithTitle {

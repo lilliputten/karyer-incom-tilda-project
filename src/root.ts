@@ -14,6 +14,7 @@ import { isDebug } from './core/constants/isDebug';
 import { initNavHeader } from './NavHeader';
 import { initProduction } from './Production';
 import { initSocials } from './Socials';
+import { initProductsIndex } from './ProductsIndex';
 
 /** Print app info */
 function printAppInfo() {
@@ -31,6 +32,7 @@ function initPage() {
   initNavHeader();
   initProduction();
   initSocials();
+  initProductsIndex();
   // Forcibely update components' dimensions
   window.dispatchEvent(new Event('resize'));
 }
