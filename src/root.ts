@@ -15,6 +15,8 @@ import { initNavHeader } from './NavHeader';
 import { initProduction } from './Production';
 import { initSocials } from './Socials';
 import { initProductsIndex } from './ProductsIndex';
+import { initStoreProduct } from './StoreProduct';
+import { initNews } from './News';
 
 /** Print app info */
 function printAppInfo() {
@@ -33,6 +35,8 @@ function initPage() {
   initProduction();
   initSocials();
   initProductsIndex();
+  initStoreProduct();
+  initNews();
   // Forcibely update components' dimensions
   window.dispatchEvent(new Event('resize'));
 }

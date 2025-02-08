@@ -16,7 +16,7 @@ function itemClick(linkNode: HTMLElement, ev: MouseEvent) {
   linkNode.dispatchEvent(newEvent);
 }
 
-function initItem(node: HTMLElement) {
+function initProductItem(node: HTMLElement) {
   const link = node.querySelector('a');
   if (link) {
     const itemClickBound = itemClick.bind(null, link);
@@ -31,27 +31,19 @@ export function initProductsIndex() {
     return;
   }
   const items = nodeRoot.querySelectorAll('.t-item, .t-store__card');
-  console.log('[ProductsIndex:initProductsIndex] start', {
-    items,
-    nodeRoot,
-  });
   if (items.length) {
-    items.forEach(initItem);
+    items.forEach(initProductItem);
   }
   const observer = new MutationObserver((mutations) => {
     // console.log('[ProductsIndex:mutations]', { mutations });
     mutations.forEach((mutation) => {
-      const { type, target, addedNodes } = mutation;
+      const { type, addedNodes } = mutation;
       if (type === 'childList' && addedNodes.length) {
-        console.log('[ProductsIndex:mutation]', { type, target, addedNodes });
-        addedNodes.forEach(initItem);
+        addedNodes.forEach(initProductItem);
       }
     });
   });
   observer.observe(nodeRoot, {
     childList: true,
-    // fireOnAttributesModification: true, // Watch for attribute changes
-    // existing: true, // Include existing elements
-    // onceOnly: true, // Fire callback only once
   });
 }

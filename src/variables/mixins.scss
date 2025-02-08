@@ -1,10 +1,14 @@
+@mixin selfActiveLink {
+  transition: all var(--transitionTimeMs);
+  &:hover {
+    opacity: 0.75;
+  }
+}
+
 @mixin basicActiveLink {
   button,
   a {
-    transition: all var(--transitionTimeMs);
-    &:hover {
-      opacity: 0.75;
-    }
+    @include selfActiveLink;
   }
 }
 

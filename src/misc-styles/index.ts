@@ -18,3 +18,4 @@ import './News.scss';
 import './PageStyles.scss';
 
 import './ProductsIndex.scss';
+import './StoreProduct.scss';

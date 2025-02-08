@@ -1,0 +1,153 @@
+@use '../variables' as *;
+
+.uc-ProductBadges,
+.uc-ProductActions {
+  // Those tho are just service containers, their content should be used only in product item cards
+  display: none;
+}
+
+#allrecords .t-rec > .t-store {
+  // padding-top: 0;
+  padding-bottom: 60px;
+}
+#allrecords .js-store-product.js-product {
+  @include basicActiveLink;
+  // Title
+  .js-store-prod-name {
+    font-size: 40px;
+    line-height: 1.2;
+    color: $primaryColor !important;
+    margin-bottom: 20px;
+    &:after {
+      @include SectionTitleDelim($size: 4px, $width: 200px, $left: true);
+    }
+  }
+  // Product text
+  .js-store-prod-all-text {
+    font-size: 24px;
+    line-height: 1.4;
+  }
+  // Product features
+  .js-store-prod-all-charcs {
+    font-size: 18px;
+  }
+  // Gallery arrows
+  .t-slds__arrow {
+    @include selfActiveLink;
+  }
+  // Gallery image
+  .t-slds__bgimg {
+    @media (width > $smallTreshold) {
+      border-radius: 10px;
+    }
+  }
+  // Tab cotnrols
+  .t-store__tabs__button {
+    user-select: none;
+    .t-store__tabs__button-title {
+      font-size: 18px;
+      text-transform: uppercase;
+      font-family: $titleFont;
+    }
+    &.t-store__tabs__button_active {
+      color: #333;
+      border-bottom: 3px solid $primaryColor !important;
+    }
+    &:hover {
+      .t-store__tabs__button-title {
+        color: $primaryColor !important;
+      }
+    }
+  }
+  // Tab contents
+  .t-store__tabs__content {
+    font-size: 18px;
+    ul {
+      padding-left: 0;
+      list-style: none;
+      li {
+        margin: 0.5em 0;
+        padding-left: 45px;
+        background-image: url('../assets/Page/item.svg');
+        background-repeat: no-repeat;
+        background-position: 0px 2px;
+      }
+    }
+  }
+  // Moved tabs content adjustments
+  .t-store__prod-popup__col-left,
+  .t-store__prod-popup__col-right {
+    .t-store__tabs__close {
+      display: none;
+    }
+    .t-store__tabs__item-title {
+      margin: 20px 0;
+      padding-top: 20px;
+      text-transform: uppercase;
+      font-size: 24px;
+      &:after {
+        @include SectionTitleDelim($size: 3px, $width: 120px, $left: true);
+      }
+    }
+  }
+  .t-store__tabs__content {
+    a {
+      color: $primaryColor;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+    ul {
+      // display: table;
+      li {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        margin: 0;
+        padding-left: 65px;
+        min-height: 65px;
+        background-image: url('../assets/Page/square-item.svg');
+      }
+    }
+  }
+  .t-store__prod-popup__col-right {
+    .t-container_100 {
+      &:before,
+      &:after {
+        display: none;
+      }
+    }
+    .t142A__wrapone {
+      justify-content: flex-start;
+    }
+    .t142A__wraptwo {
+      padding: 0;
+      display: flex;
+      gap: 10px;
+      > a.t-btn {
+        margin: 0;
+        .fa {
+          display: inline-block;
+          margin-right: 0.5em;
+          opacity: 0.5;
+          // text-decoration: none !important;
+        }
+        &:hover {
+          span {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+    .Buttons {
+      margin: 20px 0;
+      &.Badges {
+        .t-btn {
+          pointer-events: none;
+          height: 40px;
+        }
+      }
+    }
+  }
+}
