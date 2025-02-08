@@ -1,7 +1,7 @@
 import './Root.scss';
 
-import './Carousel.scss';
-import './PopupForm.scss';
+// import './Carousel.scss';
+// import './PopupForm.scss';
 
 import './Hero.scss';
 import './NavHeader.scss';
