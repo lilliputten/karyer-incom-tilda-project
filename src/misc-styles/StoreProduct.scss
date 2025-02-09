@@ -46,17 +46,19 @@
   // Tab cotnrols
   .t-store__tabs__button {
     user-select: none;
-    .t-store__tabs__button-title {
+    .t-name {
       font-size: 18px;
       text-transform: uppercase;
       font-family: $titleFont;
     }
     &.t-store__tabs__button_active {
-      color: #333;
-      border-bottom: 3px solid $primaryColor !important;
+      .t-name {
+        color: $primaryColor !important;
+        // border-bottom: 3px solid $primaryColor !important;
+      }
     }
     &:hover {
-      .t-store__tabs__button-title {
+      .t-name {
         color: $primaryColor !important;
       }
     }
@@ -91,25 +93,25 @@
         @include SectionTitleDelim($size: 3px, $width: 120px, $left: true);
       }
     }
-  }
-  .t-store__tabs__content {
-    a {
-      color: $primaryColor;
-      &:hover {
-        text-decoration: underline;
+    .t-store__tabs__content {
+      a {
+        color: $primaryColor;
+        &:hover {
+          text-decoration: underline;
+        }
       }
-    }
-    ul {
-      // display: table;
-      li {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        align-items: center;
-        margin: 0;
-        padding-left: 65px;
-        min-height: 65px;
-        background-image: url('../assets/Page/square-item.svg');
+      ul {
+        // display: table;
+        li {
+          display: flex;
+          flex-direction: row;
+          flex-wrap: wrap;
+          align-items: center;
+          margin: 0;
+          padding-left: 65px;
+          min-height: 65px;
+          background-image: url('../assets/Page/square-item.svg');
+        }
       }
     }
   }
@@ -177,7 +179,7 @@
       padding-top: 10px;
     }
     .t-store__prod-popup__sku,
-    .t-store__tabs__button .t-store__tabs__button-title,
+    .t-store__tabs__button .t-name,
     .Buttons .t-btn,
     .js-store-prod-all-text,
     .js-store-prod-all-charcs,
@@ -203,8 +205,10 @@
         padding: 5px 15px;
       }
     }
-    .t-store__prod-popup__col-left .t-store__tabs__item {
-      margin: 0 20px;
+    @media (width <= 560px) {
+      .t-store__prod-popup__col-left .t-store__tabs__item {
+        margin: 0 20px;
+      }
     }
   }
 }

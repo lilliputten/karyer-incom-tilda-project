@@ -2,17 +2,50 @@
 
 #allrecords .uc-PageBreadcrumbs {
   @include activeLink;
+  padding: 40px 0 !important;
   a {
     color: $primaryColor;
   }
+  .t758__list_item {
+    font-size: 18px;
+    @media (width <= $smallTreshold) {
+      font-size: 4vw;
+    }
+  }
 }
 
+#allrecords .uc-PageTitleCenter,
 #allrecords .uc-PageTitle {
   @include activeLink;
   @include BlockWithTitle;
+  @media (width <= $smallTreshold) {
+    .t-title {
+      font-size: 6vw;
+    }
+    .t-descr {
+      font-size: 4vw;
+    }
+  }
+}
+#allrecords .uc-PageTitle {
+  .t-title,
+  .t-descr {
+    text-align: left;
+  }
   .t-title {
     &:after {
-      // margin-left: 0;
+      margin-left: 0;
+    }
+  }
+}
+#allrecords .uc-PageTitleCenter {
+  .t-title,
+  .t-descr {
+    text-align: center;
+  }
+  .t-title {
+    &:after {
+      margin-left: auto;
     }
   }
 }
@@ -20,11 +53,6 @@
 #allrecords .uc-PageSubTitle {
   @include activeLink;
   @include BlockWithTitle;
-  .t-title {
-    &:after {
-      // margin-left: 0;
-    }
-  }
 }
 
 #allrecords .uc-PageText {
