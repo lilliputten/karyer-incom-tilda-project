@@ -43,7 +43,7 @@
       border-radius: 10px;
     }
   }
-  // Tab cotnrols
+  // Tab controls
   .t-store__tabs__button {
     user-select: none;
     .t-name {
@@ -154,6 +154,54 @@
           height: 40px;
         }
       }
+    }
+  }
+  // Adjust variants block
+  .js-product-controls-wrapper {
+    .t-product__option {
+      display: flex;
+      align-items: center;
+      gap: 1em;
+      select {
+        text-align: right;
+        padding-top: 8px;
+      }
+      .t-product__option-variants {
+        &::after {
+          top: 15px;
+        }
+      }
+      &:not(:first-child) {
+        select {
+          background: none;
+          appearance: none;
+          -webkit-appearance: none;
+          -moz-appearance: none;
+          border: none;
+          outline: none;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          pointer-events: none;
+        }
+        .t-product__option-variants {
+          &::after {
+            display: none;
+          }
+        }
+      }
+    }
+    .t-product__option-title {
+      display: inline-block;
+      &:after {
+        display: inline-block;
+        content: ': ';
+      }
+    }
+    .t-product__option-variants {
+      flex: 1;
+    }
+    .t-descr {
+      font-size: 18px;
     }
   }
   // Adjust mobile font sizes

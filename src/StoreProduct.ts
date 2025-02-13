@@ -148,10 +148,6 @@ function addProductTitleToForms() {
 
 function cloneTitleToTheTop(productNode: HTMLElement) {
   const titleNode = productNode.querySelector<HTMLElement>('.t-store__prod-popup__title-wrapper');
-  console.log('XXX', {
-    productNode,
-    titleNode,
-  });
   const wrapper = `
   <div class="t-container MobileTitle">
   </div>
