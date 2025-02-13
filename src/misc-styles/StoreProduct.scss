@@ -160,45 +160,57 @@
   }
   // Adjust variants block
   .js-product-controls-wrapper {
+    .t-product__option-title {
+      padding-top: 5px;
+    }
     .t-product__option {
       display: flex;
       align-items: center;
       gap: 1em;
+      min-height: 30px;
       select {
         text-align: right;
-        padding-top: 8px;
+        padding-right: 10px;
+      }
+      .t-product__option-variants::after {
+        top: 1em;
+        display: none;
       }
       &:first-child {
-        select:focus {
+        min-height: 50px;
+        select {
+          appearance: none;
+          -webkit-appearance: none;
+          -moz-appearance: none;
           background-color: $primaryColor;
           color: #fff;
+          overflow: hidden;
+          padding-top: 8px;
+          padding-bottom: 4px;
+          border: none;
+          outline: none;
+          &:focus {
+            padding: 10px;
+            margin-top: -26px;
+            border-radius: 10px;
+            position: absolute;
+            z-index: 99;
+            box-shadow: 2px 2px 8px color.change(#000, $alpha: 0.4);
+          }
           option {
-            &:checked {
+            padding: 4px 10px;
+            border-radius: 4px;
+            &:hover {
               background-color: color.adjust($primaryColor, $lightness: -10%);
+              box-shadow: 0 0 10px 100px color.adjust($primaryColor, $lightness: -10%) inset;
+            }
+            &:checked {
+              background-color: color.adjust($primaryColor, $lightness: -20%, $alpha: 0.5);
+              box-shadow: 0 0 10px 100px color.adjust($primaryColor, $lightness: -20%, $alpha: 0.5)
+                inset;
             }
           }
-          & + .t-product__option-variants::after {
-            border-color: #fff transparent transparent;
-          }
         }
-        .t-product__option-variants::after {
-          top: 1em;
-        }
-        /* // NOTE: It doesn't work, R&D are required
-         * select {
-         *     &:focus,
-         *     &:active,
-         *     &:hover {
-         *       background-color: green !important;
-         *     }
-         *   }
-         * }
-         */
-        /* // Not required
-         * .t-product__option-variants::after {
-         *   border-color: #fff transparent transparent;
-         * }
-         */
       }
       &:not(:first-child) {
         select {
@@ -211,6 +223,7 @@
           overflow: hidden;
           text-overflow: ellipsis;
           pointer-events: none;
+          // padding-right: 10px;
         }
         .t-product__option-variants::after {
           display: none;

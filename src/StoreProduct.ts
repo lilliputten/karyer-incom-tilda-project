@@ -157,6 +157,29 @@ function cloneTitleToTheTop(productNode: HTMLElement) {
   mobileTitleNode.append(titleNode.cloneNode(true));
 }
 
+function initJsProductControlsSelect(productNode: HTMLElement) {
+  const selectNode = productNode.querySelector<HTMLSelectElement>(
+    '.js-product-controls-wrapper select',
+  );
+  if (!selectNode) {
+    // TODO: Use observer to check when the content will be added?
+    setTimeout(() => initJsProductControlsSelect(productNode), 500);
+    return;
+  }
+  selectNode.size = 1;
+  selectNode.addEventListener('focus', () => {
+    const options = selectNode.querySelectorAll('option');
+    selectNode.size = options.length;
+  });
+  selectNode.addEventListener('blur', () => {
+    selectNode.size = 0;
+  });
+  selectNode.addEventListener('change', () => {
+    selectNode.size = 1;
+    selectNode.blur();
+  });
+}
+
 export function initStoreProduct() {
   const rootNode = document.querySelector<HTMLElement>('.t-rec > .t-store');
   const productNode = rootNode?.querySelector<HTMLElement>('.js-store-product.js-product');
@@ -169,5 +192,6 @@ export function initStoreProduct() {
     appendActionsAndLabels(rightColumn);
     addProductTitleToForms();
     cloneTitleToTheTop(productNode);
+    initJsProductControlsSelect(productNode);
   }
 }
