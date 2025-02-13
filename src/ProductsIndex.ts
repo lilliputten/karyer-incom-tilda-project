@@ -1,19 +1,25 @@
 function itemClick(linkNode: HTMLElement, ev: MouseEvent) {
-  ev.stopPropagation();
-  ev.preventDefault();
-  const newEvent = new MouseEvent(ev.type, ev);
-  /* // DEBUG: To check mobile devices' behavior
-   * const node = ev.currentTarget as HTMLElement;
-   * const link = node.querySelector('a');
-   * console.log('ProductsIndex:itemClick', {
-   *   newEvent,
-   *   linkNode,
-   *   link,
-   *   node,
-   *   ev,
-   * });
-   */
-  linkNode.dispatchEvent(newEvent);
+  // DEBUG: To check mobile devices' behavior
+  const node = ev.target as HTMLElement;
+  const nodeTagName = node.tagName;
+  if (nodeTagName !== 'A') {
+    ev.stopPropagation();
+    ev.preventDefault();
+    // const link = node.querySelector('a');
+    // const currentNode = ev.currentTarget as HTMLElement;
+    const newEvent = new MouseEvent(ev.type, ev);
+    /* console.log('ProductsIndex:itemClick', {
+     *   nodeTagName,
+     *   newEvent,
+     *   linkNode,
+     *   // currentNode,
+     *   // link,
+     *   node,
+     *   ev,
+     * });
+     */
+    linkNode.dispatchEvent(newEvent);
+  }
 }
 
 function initProductItem(node: HTMLElement) {

@@ -1,3 +1,5 @@
+@use 'sass:color';
+
 @use '../variables' as *;
 
 #allrecords {
@@ -166,10 +168,37 @@
         text-align: right;
         padding-top: 8px;
       }
-      .t-product__option-variants {
-        &::after {
-          top: 15px;
+      &:first-child {
+        select:focus {
+          background-color: $primaryColor;
+          color: #fff;
+          option {
+            &:checked {
+              background-color: color.adjust($primaryColor, $lightness: -10%);
+            }
+          }
+          & + .t-product__option-variants::after {
+            border-color: #fff transparent transparent;
+          }
         }
+        .t-product__option-variants::after {
+          top: 1em;
+        }
+        /* // NOTE: It doesn't work, R&D are required
+         * select {
+         *     &:focus,
+         *     &:active,
+         *     &:hover {
+         *       background-color: green !important;
+         *     }
+         *   }
+         * }
+         */
+        /* // Not required
+         * .t-product__option-variants::after {
+         *   border-color: #fff transparent transparent;
+         * }
+         */
       }
       &:not(:first-child) {
         select {
@@ -183,10 +212,8 @@
           text-overflow: ellipsis;
           pointer-events: none;
         }
-        .t-product__option-variants {
-          &::after {
-            display: none;
-          }
+        .t-product__option-variants::after {
+          display: none;
         }
       }
     }
@@ -226,6 +253,7 @@
     .t-store__prod-popup__info {
       padding-top: 10px;
     }
+    .js-product-controls-wrapper .t-descr,
     .t-store__prod-popup__sku,
     .t-store__tabs__button .t-name,
     .Buttons .t-btn,
