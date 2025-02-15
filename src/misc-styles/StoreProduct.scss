@@ -201,11 +201,13 @@
             padding: 4px 10px;
             border-radius: 4px;
             &:hover {
-              background-color: color.adjust($primaryColor, $lightness: -10%);
-              box-shadow: 0 0 10px 100px color.adjust($primaryColor, $lightness: -10%) inset;
+              // background-color: color.adjust($primaryColor, $lightness: -10%);
+              // box-shadow: 0 0 10px 100px color.adjust($primaryColor, $lightness: -10%) inset;
+              box-shadow: 0 0 10px 100px color.adjust(#fff, $lightness: -10%) inset;
+              color: #000;
             }
             &:checked {
-              background-color: color.adjust($primaryColor, $lightness: -20%, $alpha: 0.5);
+              // background-color: color.adjust($primaryColor, $lightness: -20%, $alpha: 0.5);
               box-shadow: 0 0 10px 100px color.adjust($primaryColor, $lightness: -20%, $alpha: 0.5)
                 inset;
             }
