@@ -180,6 +180,17 @@ function initJsProductControlsSelect(productNode: HTMLElement) {
   });
 }
 
+function initThumbs(productNode: HTMLElement) {
+  // t-slds__thumbsbullet-wrapper
+  const wrapperNode = productNode.querySelector<HTMLElement>('.t-slds__thumbsbullet-wrapper');
+  const items = wrapperNode?.querySelectorAll<HTMLElement>('.t-slds__bullet');
+  // Do nothing if there no thumbnails at all or there are too many of them
+  if (!items || items.length < 4 || items.length > 8) {
+    return;
+  }
+  wrapperNode.classList.add('fit');
+}
+
 export function initStoreProduct() {
   const rootNode = document.querySelector<HTMLElement>('.t-rec > .t-store');
   const productNode = rootNode?.querySelector<HTMLElement>('.js-store-product.js-product');
@@ -193,5 +204,6 @@ export function initStoreProduct() {
     addProductTitleToForms();
     cloneTitleToTheTop(productNode);
     initJsProductControlsSelect(productNode);
+    initThumbs(productNode);
   }
 }

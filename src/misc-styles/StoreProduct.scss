@@ -246,6 +246,19 @@
       font-size: 18px;
     }
   }
+  // Preview thumbnails
+  .t-slds__thumbsbullet-wrapper {
+    .t-slds__bullet {
+      border-radius: 5px;
+      overflow: hidden;
+    }
+    &.fit {
+      display: flex;
+      .t-slds__bullet {
+        flex: 1;
+      }
+    }
+  }
   // Adjust mobile font sizes
   .MobileTitle {
     > div {
