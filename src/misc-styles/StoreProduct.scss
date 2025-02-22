@@ -246,6 +246,10 @@
       font-size: 18px;
     }
   }
+  // Details table
+  .TableWrapper {
+    overflow: auto;
+  }
   // Preview thumbnails
   .t-slds__thumbsbullet-wrapper {
     .t-slds__bullet {

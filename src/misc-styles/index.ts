@@ -19,3 +19,5 @@ import './PageStyles.scss';
 
 import './ProductsIndex.scss';
 import './StoreProduct.scss';
+
+import './StyledTable.scss';

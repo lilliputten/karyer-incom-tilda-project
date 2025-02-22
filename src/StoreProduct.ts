@@ -18,6 +18,7 @@ const rubricTitles: Record<string, string> = {
   'heap-leaching': 'Кучное выщелачивание',
 };
 
+const tableTitle = 'Таблица данных';
 const videoTitle = 'Видео';
 const featuresTitle = 'Основные преимущества';
 
@@ -90,6 +91,53 @@ function addBreadcrumbs(rootNode: HTMLElement) {
   rootNode.style.paddingTop = '0';
 }
 
+function createTableRow(line: string, isHeader?: boolean) {
+  const row = document.createElement('tr');
+  row.classList.toggle('header', isHeader);
+  const cellTag = isHeader ? 'th' : 'td';
+  const items = line.split(';').map((s) => s.trim());
+  items.forEach((s) => {
+    const cell = document.createElement(cellTag);
+    cell.innerText = quoteHtmlAttr(s);
+    row.append(cell);
+  });
+  return row;
+}
+
+function processTable(node: HTMLElement) {
+  const contentNode = node?.querySelector<HTMLElement>('.t-store__tabs__content');
+  if (!contentNode) {
+    return node;
+  }
+  const contentText = contentNode.innerHTML.trim();
+  const lines = contentText
+    .replace(/<br\s*\/>/g, '<br>')
+    .split('<br>')
+    .map((s) => s.trim())
+    .filter(Boolean);
+  const table = document.createElement('table');
+  table.classList.add('StyledTable');
+  try {
+    lines.forEach((line, n) => {
+      const row = createTableRow(line, n === 0);
+      table.append(row);
+    });
+    contentNode.replaceChildren(table);
+    contentNode.classList.add('TableWrapper');
+    return node;
+  } catch (err) {
+    // eslint-disable-next-line no-console
+    console.error('[StoreProduct:processTable]', err.message, {
+      err,
+      lines,
+      contentText,
+      node,
+    });
+    debugger; // eslint-disable-line no-debugger
+    return node;
+  }
+}
+
 function createDetailsFromTabs(
   productNode: HTMLElement,
   leftColumn: HTMLElement,
@@ -104,13 +152,15 @@ function createDetailsFromTabs(
   tabs.forEach((tab, idx) => {
     const title = tab.dataset.tabTitle;
     const isVideo = title === videoTitle;
+    const isTable = title === tableTitle;
     const isFeatures = title === featuresTitle;
-    if (!isVideo && !isFeatures) {
+    if (!isTable && !isVideo && !isFeatures) {
       return;
     }
     const node = nodes[idx];
     const targetContainer = isVideo ? leftColumn : rightColumn;
-    targetContainer.append(node);
+    const newNode = isTable ? processTable(node) : node;
+    targetContainer.append(newNode);
     tab.remove();
     // tab.style.display = 'none';
   });

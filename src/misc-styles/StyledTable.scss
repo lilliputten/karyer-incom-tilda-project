@@ -1,0 +1,21 @@
+@use 'sass:color';
+
+@use '../variables' as *;
+
+#allrecords .StyledTable {
+  // border: 2px solid red;
+  // width: 100%;
+  border-spacing: 2px;
+  border-collapse: separate;
+  th,
+  td {
+    padding: 0.5em;
+    border-bottom: 1px solid #ccc;
+  }
+  th {
+    padding-top: 1em;
+    background-color: color.change($grayMd2Color, $alpha: 0.1);
+    border-bottom: 2px solid #999;
+    white-space: nowrap;
+  }
+}
