@@ -143,6 +143,7 @@ function createDetailsFromTabs(
   leftColumn: HTMLElement,
   rightColumn: HTMLElement,
 ) {
+  const wideColumn = productNode.querySelector<HTMLElement>('.js-store-tabs');
   const tabs = productNode.querySelectorAll<HTMLElement>(
     '.t-store__tabs__controls .t-store__tabs__button',
   );
@@ -158,9 +159,19 @@ function createDetailsFromTabs(
       return;
     }
     const node = nodes[idx];
-    const targetContainer = isVideo ? leftColumn : rightColumn;
+    const targetContainer = isTable ? wideColumn : isVideo ? leftColumn : rightColumn;
     const newNode = isTable ? processTable(node) : node;
-    targetContainer.append(newNode);
+    if (isTable) {
+      // Place a table above the tab headers
+      const wrapper = document.createElement('div');
+      const parent = wideColumn.parentNode;
+      wrapper.classList.add('ProducTableWrapper', 't-col', 't-col_12');
+      wrapper.append(newNode);
+      parent.insertBefore(wrapper, wideColumn);
+    } else {
+      // Just add the block to the appropriate column
+      targetContainer.append(newNode);
+    }
     tab.remove();
     // tab.style.display = 'none';
   });

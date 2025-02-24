@@ -81,6 +81,7 @@
     }
   }
   // Moved tabs content adjustments
+  .ProducTableWrapper,
   .t-store__prod-popup__col-left,
   .t-store__prod-popup__col-right {
     .t-store__tabs__close {
@@ -115,6 +116,12 @@
           background-image: url('../assets/Page/square-item.svg');
         }
       }
+    }
+  }
+  .ProducTableWrapper {
+    .t-store__tabs__content {
+      // width: 100%;
+      max-width: none;
     }
   }
   .t-store__prod-popup__col-right {
