@@ -1,21 +1,33 @@
 // prettier-ignore
 const rubricTitles: Record<string, string> = {
-  'shiploaders': 'Судопогрузчики',
-  'radial-telescopic-conveyors': 'Радиальные телескопические стакеры',
-  'track-mounted-conveyors': 'Конвейеры на гусеничном ходу',
+  /* // NOTE: As on 2025.06.20, 19:28, added the following rubrics:
+   * fixed-belt-conveyors: Универсальные ленточные конвейеры
+   * truck-unloader: Разгрузчик грузовиков
+   * radial-stacking-onveyor: Радиальный штабелирующий конвейер
+   * models-telestackers: Модели телестакеров
+   * solutions-for-stacking: Решения для штабелирования и погрузки сыпучих материалов
+   */
   'bulk-reception-feeders': 'Бункеры для разгрузки самосвалов',
+  'concrete': 'Производство цемента',
+  'fixed-belt-conveyors': 'Универсальные ленточные конвейеры',
+  'heap-leaching': 'Кучное выщелачивание',
+  'link-conveyors': 'Промежуточные конвейеры',
+  'mining': 'Горная промышленность',
   'mobile-hopper-feeders': 'Мобильные бункеры-питатели',
   'mobile-reclaimer-bunkers': 'Мобильные бункеры-реклаймеры',
-  'ship-unloader': 'Системы разгрузки судов',
-  'link-conveyors': 'Промежуточные конвейеры',
+  'models-telestackers': 'Модели телестакеров',
   'port-shiploading': 'Порты и терминалы',
-  'quarries': 'Карьеры и нерудная промышленность',
-  'mining': 'Горная промышленность',
-  'rail-wagonloading': 'Загрузка и разгрузка вагонов',
-  'stockyard': 'Штабелирование',
   'power-stations': 'Энергетическая промышленность',
-  'concrete': 'Производство цемента',
-  'heap-leaching': 'Кучное выщелачивание',
+  'quarries': 'Карьеры и нерудная промышленность',
+  'radial-stacking-onveyor': 'Радиальный штабелирующий конвейер',
+  'radial-telescopic-conveyors': 'Радиальные телескопические стакеры',
+  'rail-wagonloading': 'Загрузка и разгрузка вагонов',
+  'ship-unloader': 'Системы разгрузки судов',
+  'shiploaders': 'Судопогрузчики',
+  'solutions-for-stacking': 'Решения для штабелирования и погрузки сыпучих материалов',
+  'stockyard': 'Штабелирование',
+  'track-mounted-conveyors': 'Конвейеры на гусеничном ходу',
+  'truck-unloader': 'Разгрузчик грузовиков',
 };
 
 const tableTitle = 'Таблица данных';
