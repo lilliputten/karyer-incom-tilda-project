@@ -8,7 +8,12 @@
     "patches": true,
     "publish": true
   },
+  "files.exclude": {
+    "**/*~": true,
+    "**/*_": true,
+    "**/*.tmp": true,
+    "**/.*.sw?": true
+  },
   "git.ignoreLimitWarning": true,
-  "CodeGPT.apiKey": "CodeGPT Plus Beta",
   "findUnusedExports.detectCircularImports": true
 }

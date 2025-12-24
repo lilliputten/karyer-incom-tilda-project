@@ -2,11 +2,21 @@
 
 @use '../variables' as *;
 
-#allrecords {
+#t-footer {
   // Those tho are just service containers, their content should be used only in product item cards
   .uc-ProductBadges,
   .uc-ProductActions {
     display: none;
+  }
+}
+
+.uc-ProductBadges,
+.uc-ProductActions {
+  margin: 0;
+  padding: 0 !important;
+  .t142A__wrapper {
+    justify-content: flex-start;
+    padding: 0;
   }
 }
 

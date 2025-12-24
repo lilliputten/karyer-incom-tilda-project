@@ -23,11 +23,17 @@ function itemClick(linkNode: HTMLElement, ev: MouseEvent) {
 }
 
 function initProductItem(node: HTMLElement) {
+  if (node.classList.contains('inited')) {
+    return;
+  }
   const link = node.querySelector('a');
   if (link) {
     const itemClickBound = itemClick.bind(null, link);
     node.addEventListener('click', itemClickBound);
     node.classList.add('has-link');
+  }
+  if (node.classList.contains('inited')) {
+    return;
   }
 }
 
@@ -36,7 +42,7 @@ export function initProductsIndex() {
   if (!nodeRoot) {
     return;
   }
-  const items = nodeRoot.querySelectorAll('.t-item, .t-store__card');
+  const items = nodeRoot.querySelectorAll('.t-item'); // , .t-store__card');
   if (items.length) {
     items.forEach(initProductItem);
   }
@@ -45,7 +51,13 @@ export function initProductsIndex() {
     mutations.forEach((mutation) => {
       const { type, addedNodes } = mutation;
       if (type === 'childList' && addedNodes.length) {
-        addedNodes.forEach(initProductItem);
+        const nodes = Array.from(addedNodes).flatMap((node: HTMLElement) => {
+          if (node.classList.contains('t-item')) {
+            return node;
+          }
+          return Array.from(node.querySelectorAll('.t-item'));
+        });
+        nodes.forEach(initProductItem);
       }
     });
   });

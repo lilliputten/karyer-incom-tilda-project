@@ -190,14 +190,14 @@ function createDetailsFromTabs(
 }
 
 function appendActionsAndLabels(rightColumn: HTMLElement) {
-  const badgesNode = document.querySelector<HTMLElement>('.uc-ProductBadges .t142A');
+  const badgesNode = document.querySelector('.uc-ProductBadges'); // ?.cloneNode(true) as Element; // Clone to debug original node
   if (badgesNode) {
     badgesNode.classList.add('Buttons', 'Badges');
     rightColumn.append(badgesNode);
     const btns = badgesNode.querySelectorAll('.t-btn');
     btns[0]?.insertAdjacentHTML('afterbegin', '<i class="fa fa-gift"></i> ');
   }
-  const actionsNode = document.querySelector<HTMLElement>('.uc-ProductActions .t142A');
+  const actionsNode = document.querySelector('.uc-ProductActions'); // ?.cloneNode(true) as Element; // Clone to debug original node
   if (actionsNode) {
     actionsNode.classList.add('Buttons', 'Actions');
     rightColumn.append(actionsNode);
